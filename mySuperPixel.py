@@ -1,3 +1,9 @@
+# This code is a modification of a SLIC implementation. It applies SLIC on each frame of a given video.
+# References:
+# Segmentation: A SLIC Superpixel Tutorial using Python
+# Website: https://www.pyimagesearch.com/2014/07/28/a-slic-superpixel-tutorial-using-python/
+# Accessed at Mar3, 2019
+
 # USAGE
 # python superpixel.py --image raptors.png
 
@@ -36,9 +42,10 @@ def count_frames_manual(video):
 
 
 # load the video and divide it into frames
-vidcap = cv2.VideoCapture("test2.mp4")
+videoName = input("Please enter a video name: ")
+vidcap = cv2.VideoCapture(videoName)
 print("Frames: ",count_frames_manual(vidcap))
-vidcap = cv2.VideoCapture("test2.mp4")
+vidcap = cv2.VideoCapture(videoName)
 success,image = vidcap.read()
 
 # Define the codec and create VideoWriter object
